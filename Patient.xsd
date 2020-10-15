@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Patient1"
+	xmlns:tns="http://www.example.org/Patient1"
+	elementFormDefault="qualified">
+
+	<element name="patient" type="tns:Patient"></element>
+
+	<complexType name="Patient">
+		<sequence>
+			<element name="id" type="int"></element>
+			<element name="age" type="int" maxOccurs="unbounded"></element>
+			<element name="name" type="Name"></element>
+			<element name="payment" type="tns:PaymentType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PaymentType">
+		<choice>
+			<element name="cash" type="int"></element>
+			<element name="insurance" type="tns:Insurance"></element>
+		</choice>
+	</complexType>
+
+	<complexType name="Insurance">
+		<all>
+			<element name="provider" type="string"></element>
+			<element name="limit" type="int"></element>
+		</all>
+	</complexType>
+
+	<simpleType name="Name">
+		<restriction base="string">
+			<maxLength value="10"></maxLength>
+		</restriction>
+	</simpleType>
+</schema>
