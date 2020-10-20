@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:patient xmlns:xs="http://www.example.org/Patient" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/Patient Patient.xsd ">
+  <xs:id>0</xs:id>
+  <xs:age>0</xs:age>
+  <xs:name>Name</xs:name>
+  <xs:payment>
+    <!-- <xs:cash>0</xs:cash> -->
+    <xs:insurance>
+    	<xs:limit>4000</xs:limit>
+    	<xs:provider>Star Health</xs:provider>
+    </xs:insurance>
+  </xs:payment>
+</xs:patient>
